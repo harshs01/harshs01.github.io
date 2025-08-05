@@ -10,12 +10,13 @@
   --light-navy: #233554;
   --lightest-navy: #303c55;
   --navy-shadow: rgba(2, 12, 27, 0.7);
-  --slate: #8892b0;
+  --slate: #a8b2d1; /* Changed from #8892b0 for better visibility */
   --light-slate: #a8b2d1;
   --lightest-slate: #ccd6f6;
   --white: #e6f1ff;
   --vibrant-pink: #f92056;
   --vibrant-purple: #7d42c2;
+  --vibrant-teal: #64ffda;
   --gradient: linear-gradient(135deg, var(--vibrant-pink), var(--vibrant-purple));
 
   --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
@@ -155,7 +156,7 @@ section.visible {
 }
 
 .hero .intro {
-  color: var(--vibrant-pink);
+  color: var(--vibrant-teal);
   font-family: var(--font-mono);
   font-size: 16px;
   margin-bottom: 20px;
@@ -351,11 +352,12 @@ section.visible {
   cursor: pointer;
   transition: all 0.3s;
   font-family: var(--font-mono);
+  font-weight: 600;
 }
 
 .experience .tab-btn:hover,
 .experience .tab-btn.active {
-  color: var(--vibrant-pink);
+  color: #64ffda; /* Keep teal for this section */
   background-color: var(--light-navy);
 }
 
@@ -402,7 +404,7 @@ section.visible {
   content: "▹";
   position: absolute;
   left: 0;
-  color: var(--vibrant-pink);
+  color: #64ffda; /* Keep teal for this section */
 }
 
 .portfolio .project-grid {
@@ -430,9 +432,9 @@ section.visible {
 }
 
 .portfolio .project-overline {
-  color: var(--vibrant-pink);
+  color: var(--vibrant-teal);
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .portfolio .project-title {
@@ -473,7 +475,7 @@ section.visible {
 }
 
 .portfolio .project-links a:hover {
-  color: var(--vibrant-pink);
+  color: #64ffda; /* Keep teal for this section */
 }
 
 .contact {
@@ -695,6 +697,29 @@ footer {
 
   .mobile-nav {
     display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px; /* Add padding to avoid overlap with header */
+  }
+
+  .hero-text {
+    max-width: 100%;
+    order: 2; /* Ensure text comes after the image if needed, or adjust as necessary */
+  }
+
+  .hero-image-container {
+    position: relative; /* Change from absolute to relative */
+    width: 50%; /* Adjust width for mobile */
+    max-width: 200px; /* Max width for the image */
+    order: 1; /* Image appears before the text */
+    margin: 0 auto 30px; /* Center the container and add space below */
+    top: auto; /* Reset positioning */
+    right: auto;
+    transform: none; /* Reset transform */
   }
 }
 
